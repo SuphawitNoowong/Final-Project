@@ -1,0 +1,595 @@
+/* RESET */
+* {
+  font-family: 'Sarabun', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout Container */
+.dashboard-container {
+  background: linear-gradient(to bottom right, #ecfdf5, #f0fdf4, #f0fdfa);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Main */
+.dashboard-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.user-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d1fae5;
+}
+
+.profile-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #34d399, #14b8a6);
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.profile-circle::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.user-details {
+  flex-grow: 1;
+}
+
+.greeting1 {
+  font-size: 18px;
+  color: #047857;
+  margin-bottom: 4px;
+}
+
+.role1 {
+  font-size: 28px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+.username1 {
+  font-size: 20px;
+  color: #047857;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.underline1 {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #34d399, #14b8a6);
+  margin-top: 8px;
+  border-radius: 6px;
+}
+
+.user-date {
+  text-align: right;
+}
+
+.date-label {
+  font-size: 14px;
+  color: #047857;
+  font-weight: bold;
+}
+
+.date-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* เมนูประเมิน */
+.menu-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+  gap: 1.5rem; /* ระยะห่างระหว่างกล่อง */
+  margin-bottom: 2rem;
+  max-width: 1300px; /* ความกว้างรวม */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.menu-card {
+  position: relative; /* ต้องมีเพื่อวางเลเยอร์แสง */
+  background: linear-gradient(to right, #10b981, #14b8a6);
+  border-radius: 28px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden; /* ให้แสงไม่ล้น */
+}
+
+/* แสงแวววาว */
+.menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer-card 3s infinite;
+  z-index: 1;
+}
+
+/* อนิเมชันแสงไหล */
+@keyframes shimmer-card {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* ทำให้เนื้อหาการ์ดอยู่เหนือ shimmer */
+.menu-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  backdrop-filter: blur(6px);
+  padding: 0;
+  line-height: 0;
+}
+
+.menu-icon {
+  font-size: 32px;
+  color: white;
+  display: block;
+  transform: translateY(7px);
+}
+
+.menu-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-title1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.menu-subtitle {
+  font-size: 18px;
+  color: #e0f8f4;
+}
+
+.menu-desc {
+  font-size: 14px;
+  color: #ccf2e9;
+  margin-top: 4px;
+}
+
+.menu-arrow {
+  font-size: 28px;
+  color: #e0f8f4;
+}
+
+/* Recommendation Section */
+recommendation-section {
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d1fae5;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.recommendation-section {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d1fae5;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+
+
+.subtitle {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+
+.recommendation-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+
+
+.recommendation-card {
+  background-color: var(--bg-color, #fff);
+  border-radius: 24px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+
+.recommendation-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* สีแนะนำ */
+.red {
+  background: linear-gradient(to bottom right, #ffeaea, #ffcccc);
+  color: #e74c3c;
+}
+
+.blue {
+  background: linear-gradient(to bottom right, #eaf4ff, #cce5ff);
+  color: #2980b9;
+}
+
+.green {
+  background: linear-gradient(to bottom right, #eaffea, #c7f5c7);
+  color: #27ae60;
+}
+
+.cyan {
+  background: linear-gradient(to bottom right, #e6faff, #c6f2f9);
+  color: #00bcd4;
+}
+
+.orange {
+  background: linear-gradient(to bottom right, #fff4e5, #ffe0bd);
+  color: #e67e22;
+}
+
+.purple {
+  background: linear-gradient(to bottom right, #f6eaff, #e0d1ff);
+  color: #9b59b6;
+}
+
+
+.recommendation-card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.recommendation-card p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 2px;
+}
+
+.read-more-button {
+  background-color: white;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05); /* ขอบเบา ๆ ด้านใน */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.read-more-button:hover {
+  background-color: #f3f4f6; /* เทาอ่อนเมื่อ hover */
+}
+
+
+
+.read-more-button:hover {
+  background-color: #10b981;
+  color: white;
+}
+
+/* Footer */
+.dashboard-footer {
+  background: linear-gradient(to right, #28c76f, #20c997);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  margin-top: auto;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* จุดสถานะสีเขียวด้านขวาล่างของโปรไฟล์ */
+.status-dot {
+  position: absolute;
+  right: -9px;
+  bottom: -9px;
+  width: 35px;
+  height: 35px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+.status-inner {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ✅ พื้นหลังสีอ่อนแต่ละการ์ด */
+.card-bg-red {
+  background: linear-gradient(to bottom right, #ffeaea, #ffdddd);
+}
+
+.card-bg-blue {
+  background: linear-gradient(to bottom right, #eaf4ff, #d9ecff);
+}
+
+.card-bg-green {
+  background: linear-gradient(to bottom right, #eaffea, #d7fcd7);
+}
+
+.card-bg-cyan   { background-color: #e6faff; }.card-bg-cyan {
+  background: linear-gradient(to bottom right, #e6faff, #d0f5fb);
+}
+.card-bg-orange {
+  background: linear-gradient(to bottom right, #fff4e5, #ffecd1);
+}
+
+.card-bg-purple {
+  background: linear-gradient(to bottom right, #f6eaff, #e9d9fc);
+}
+
+/* ✅ ปุ่มขาวขอบเขียว */
+.white-bg {
+  background-color: white;
+  color: #323841;         /* สีเทากลาง อ่านง่ายแต่ไม่เข้ม */
+  font-weight: 500;       /* ความหนา: ปานกลาง */
+  font-size: 14px;        /* ขนาดเล็กลงเล็กน้อย */
+  padding: 10px 16px;     /* ขนาดภายในสมดุล */
+  border-radius: 10px;
+  border: none;           /* ไม่มีเส้นขอบ */
+  transition: background-color 0.2s ease;
+  width: 100%;            /* ให้ปุ่มกว้างเต็มการ์ด (แบบภาพที่ 1) */
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05); /* เส้นขอบด้านในเบาๆ */
+}
+.white-bg:hover {
+  background-color: #f0fdf4;
+  color: #0f5132;
+}
+
+
+.recommendation-section h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2937; /* เทาเข้ม */
+  margin-bottom: 8px;
+  display: inline-block;
+  position: relative;
+}
+
+.recommendation-section .subtitle {
+  font-size: 16px;
+  color: #4b5563; /* เทากลาง */
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+/* เส้นใต้ */
+.recommendation-section .subtitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #34d399, #14b8a6); /* เขียวไล่เฉด */
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+
+h1 {
+  font-size: 28px;         /* ปรับขนาดให้เล็กลงจากค่ามาตรฐาน */
+  font-weight: 700;        /* ความหนา */
+  color: #1f2937;          /* สีเทาเข้ม */
+  margin-bottom: 12px;     /* ระยะห่างด้านล่าง */
+}
+
+
+/* ✅ สำหรับหน้าจอเล็ก (มือถือ) */
+@media (max-width: 768px) {
+  .user-info-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .profile-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+  }
+
+  .user-date {
+    text-align: center;
+  }
+
+  .menu-wrapper {
+    grid-template-columns: 1fr; /* เปลี่ยนจาก 2 คอลัมน์เป็น 1 */
+    gap: 20px;
+  }
+
+  .menu-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .menu-left {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .menu-icon-box {
+    width: 56px;
+    height: 56px;
+  }
+
+  .menu-title1 {
+    font-size: 18px;
+  }
+
+  .menu-subtitle {
+    font-size: 15px;
+  }
+
+  .menu-desc {
+    font-size: 13px;
+  }
+
+  .recommendation-cards {
+    grid-template-columns: 1fr; /* คอลัมน์เดียวในมือถือ */
+    gap: 16px;
+  }
+
+  .recommendation-card {
+    padding: 20px;
+  }
+
+  .read-more-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .recommendation-section {
+    padding: 24px 20px;
+  }
+
+  .dashboard-main {
+    padding: 30px 16px;
+  }
+}
+
+/* ✅ สำหรับ tablet (กลาง) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .recommendation-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

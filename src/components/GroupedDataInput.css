@@ -1,0 +1,252 @@
+/* สถานะกำลังกรอกข้อมูล */
+.status-progressing {
+  color: #FFA500;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .status-progressing {
+    font-size: 0.8rem;
+  }
+}
+/* กล่อง Grid แสดงการ์ดกลุ่มข้อมูล */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 4 คอลัมน์ */
+  gap: 2rem;
+  max-width: 1200px;                      /* กำหนดความกว้างรวมของแถว */
+  margin: 3rem auto;
+  overflow-x: auto;
+  justify-content: center;  
+}
+
+/* การ์ดแต่ละกลุ่ม */
+.group-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ส่วนหัวของการ์ด */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.status-icon {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* ข้อความภายในการ์ด */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 1.2rem;
+}
+
+/* ความคืบหน้าแต่ละการ์ด */
+.progress-section {
+  margin-bottom: 1.2rem;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* ความคืบหน้าโดยรวม */
+.overall-progress-group {
+  width: 100%;               /* ใช้ 100% ของความกว้างของ parent */
+  max-width: 1200px;           /* ลบ max-width เพื่อให้มันยืดเต็มที่ */
+  margin: 2rem auto;         /* ค่ามาร์จิ้นเพื่อจัดตำแหน่งกลาง */
+  padding: 1.5rem;           /* เพิ่ม padding ตามต้องการ */
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.progress-label-main {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.progress-percentage {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.main-progress-container {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 1rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.main-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #34d399 0%, #059669 100%);
+  border-radius: 9999px;
+  transition: width 1s ease-out;
+}
+
+.progress-status {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* ปุ่มลิงก์ไปยังแบบฟอร์ม */
+.action-button {
+  width: 100%;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.gradient-general {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.gradient-caregiver {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.gradient-nutrition {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.gradient-sanitation {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.action-button:hover .arrow {
+  transform: translateX(0.25rem);
+}
+.inline-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* ถ้าชื่อยาวจะขึ้นบรรทัดใหม่ */
+}
+.inline-header h2,
+.inline-header h3 {
+  margin: 0;
+  padding: 0 2px;
+}
+
+/* ข้อความหัวเรื่อง */
+.main-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #065f46;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.main-description {
+  font-size: 1rem;
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .groups-grid {
+    grid-template-columns: repeat(2, 1fr); /* เปลี่ยนเป็น 2 คอลัมน์ในจอเล็ก */
+  }
+}
+
+@media (max-width: 600px) {
+  .groups-grid {
+    grid-template-columns: 1fr; /* เปลี่ยนเป็นแนวตั้งบนจอมือถือ */
+  }
+  .status-progressing {
+    font-size: 0.8rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}

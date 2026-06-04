@@ -1,0 +1,182 @@
+/* 🟢 โครงหลักของหน้า */
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🟢 หัวข้อ */
+.children-section-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #065f46;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.children-section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 12px auto 0 auto;
+  background: linear-gradient(to right, #10b981, #2dd4bf);
+  border-radius: 10px;
+}
+
+/* 🟢 กริดการ์ดเด็ก */
+.children-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 0 1.5rem 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 🟢 การ์ดเด็ก */
+.child-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+  border: 1px solid #e0f2f1;
+}
+
+.child-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+  background: #f8fffe;
+}
+
+/* 🟢 รูปเด็ก */
+.child-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  border: 4px solid #d1fae5;
+  transition: transform 0.3s ease;
+}
+
+.child-card:hover .child-avatar {
+  transform: scale(1.05);
+}
+
+/* 🟢 ชื่อเด็ก */
+.child-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+}
+
+/* 🟢 HN badge */
+.child-hn-badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #047857;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #a7f3d0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* 🟡 ข้อความเมื่อไม่มีเด็ก */
+.no-children-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6b7280;
+  background-color: #fff8f8;
+  padding: 50px 20px;
+  border-radius: 16px;
+  margin: 60px auto;
+  max-width: 700px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #fde2e2;
+  line-height: 1.8;
+}
+
+/* 🔁 Responsive tweaks */
+@media (max-width: 768px) {
+  .children-section-title {
+    font-size: 26px;
+  }
+
+  .child-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .child-name {
+    font-size: 16px;
+  }
+
+  .child-hn-badge {
+    font-size: 12px;
+    padding: 0.4rem 1rem;
+  }
+
+  .children-grid {
+    padding: 0 1rem 2rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .children-section-title {
+    font-size: 22px;
+    padding: 0 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .children-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem 1.5rem;
+  }
+
+  .child-card {
+    padding: 1.75rem;
+    margin: 0 auto;
+    max-width: 450px;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .child-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .child-name {
+    font-size: 15px;
+  }
+
+  .no-children-message {
+    font-size: 1rem;
+    padding: 40px 15px;
+  }
+   header, footer {
+    width: 100vw;
+    min-width: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,206 @@
+.register-page-wrapper {
+  background: linear-gradient(to bottom, #f0fff7, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sarabun', sans-serif;
+  padding: 20px;
+}
+
+.register-card {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+}
+
+.icon-circle {
+  background-color: #d1fae5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 28px;
+  color: #059669;
+}
+
+.register-card h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.form-section-title {
+  text-align: left;
+  font-weight: 500;
+  font-size: 15px;
+  color: #374151;
+  margin: 16px 0 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ช่องชื่อและนามสกุลให้กว้างเท่ากัน */
+.input-field.name-field {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* ช่องสั้น เช่น HN, Prefix, หมู่, รหัสไปรษณีย์ */
+.input-field.short {
+  flex: 0.3;
+  min-width: 80px;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #f9fafb;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #34d399;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  background-color: #10b981;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .input-field,
+  .input-field.short,
+  .input-field.name-field {
+    width: 100%;
+    flex: none;
+    min-width: auto;
+  }
+
+  .register-card {
+    padding: 24px;
+  }
+}
+
+
+select.input-field {
+  appearance: none;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 15px;
+  min-width: 100px;
+  font-family: 'Sarabun', sans-serif;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='none'%20stroke='black'%20stroke-width='.6'%20d='M0%200l2%202%202-2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-position-y: 75%;
+  background-size: 12px;
+}
+
+
+.input-field.hn-field {
+  flex: 0.3;
+  min-width: 50px;
+}
+
+.input-field.prefix-field {
+  flex: 0.4;
+  min-width: 72px; /* ต่ำสุดที่ยังพอมอง "นางสาว" ได้ */
+}
+
+.input-field.name-field {
+  flex: 0.8;
+  min-width: 90px;
+}
+
+.input-with-star-register {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-star-register .input-field {
+  width: 100%;
+  padding-right: 20px; /* กันไม่ให้ * ชนขอบ */
+}
+
+.required-star-register {
+  position: absolute;
+  right: 8px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: red;
+  font-size: 20px;
+}
+
+.form-row-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 100px;
+}
+
+/* ขนาดเฉพาะช่อง */
+.hn-field {
+  flex: 0.8;
+  min-width: 80px;
+}
+
+.prefix-field {
+  flex: 0.8;
+  min-width: 100px;
+}
+
+.name-field {
+  flex: 1.2;
+  position: relative;
+}

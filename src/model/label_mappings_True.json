@@ -1,0 +1,124 @@
+{
+  "Vitamin_A_Intake_First_8_Weeks": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Sanitary_Disposal": {
+    "mapping": {
+      "False": 0,
+      "True": 1
+    }
+  },
+  "Child_wash_hand_before_or_after_eating_food": {
+    "mapping": {
+      "False": 0,
+      "True": 1
+    }
+  },
+  "Child_wash_hand_before_or_after_visiting_the_toilet": {
+    "mapping": {
+      "False": 0,
+      "True": 1
+    }
+  },
+  "Given_Anything_to_Drink_in_First_6_Months": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Still_Breastfeeding": {
+    "mapping": {
+      "False": 0,
+      "True": 1
+    }
+  },
+  "Received_Thin_Porridge": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Grain_Based_Foods": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Orange_Yellow_Foods": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_White_Root_Foods": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Dark_Green_Leafy_Veggies": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Ripe_Mangoes_Papayas": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Meat": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Eggs": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Fish_Shellfish_Seafood": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Legumes_Nuts_Foods": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Dairy_Products": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Oil_Fats_Butter": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Received_Salt": {
+    "mapping": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "Number_of_Times_Eaten_Solid_Food": {
+    "mapping": {
+      "1-2 meals": 0,
+      "3-4 meals": 1,
+      "dont eat": 2,
+      "more than 4 meals": 3
+    }
+  }
+}

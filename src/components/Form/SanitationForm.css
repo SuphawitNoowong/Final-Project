@@ -1,0 +1,277 @@
+.nutrition-form-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f0fdfa;
+  font-family: 'Prompt', sans-serif;
+}
+
+.nutrition-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: 3rem auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.nutrition-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.nutrition-subtitle {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-group {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.accordion-toggle {
+  background: #e0f2fe;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.accordion-content {
+  background: #ffffff;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 2rem;
+  margin: 0.5rem 0;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.checkbox-row input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #10b981;
+  margin: 0;
+}
+
+.checkbox-row label {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.number-section {
+  margin-top: 1rem;
+}
+
+.number-row {
+  margin-bottom: 1rem;
+}
+
+.question-label {
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.number-input {
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  max-width: 150px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(to right, #10b981, #3b82f6);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.8rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 2rem;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+}
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.number-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-label {
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.number-input {
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  font-size: 1rem;
+}
+.group-note {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.number-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-label {
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.number-input {
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: linear-gradient(to right, #4ade80, #22d3ee); /* เขียวไปฟ้า */
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.complete-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+/* สีปกติของ accordion-toggle */
+/* สีปกติของ accordion-toggle */
+.accordion-toggle {
+  background-color: #e0f2fe; /* <<-- ฟ้าอ่อน (สีเดิมของคุณ) */
+  color: #111827;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* เวลา hover */
+.accordion-toggle:hover {
+  background-color: #bae6fd; /* ฟ้าเข้มนิดนึงตอน hover */
+}
+
+/* ถ้า group เสร็จแล้ว → สีเขียว */
+.accordion-toggle.completed-group {
+  background-color: #d1fae5; /* สีเขียวอ่อน */
+  color: #065f46; /* เขียวเข้ม */
+}
+.overall-progress {
+  max-width: 1000px;  /* เพิ่มตัวนี้ เพื่อให้กว้างเหมือน nutrition-card */
+  width: 100%;        /* เต็มพื้นที่ container */
+  margin: 2rem auto;  /* จัดกลาง */
+  padding: 1.5rem;
+  background: #f0fdfa;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.main-progress-container {
+  background: #e5e7eb;
+  border-radius: 9999px;
+  height: 16px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.main-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #06b6d4, #a5f3fc); /* เขียว → ฟ้า */
+  transition: width 0.5s ease;
+  border-radius: 9999px;
+}
+
+
+

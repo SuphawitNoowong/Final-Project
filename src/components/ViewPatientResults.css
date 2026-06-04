@@ -1,0 +1,479 @@
+.view-results-container {
+  font-family: 'Sarabun', sans-serif;
+  background-color: #f0fff7;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 28px;
+  color: #059669;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Filter */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.search-box input {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+  background-color: white;
+}
+
+.search-box input:focus {
+  border-color: #34c38f;
+  outline: none;
+}
+
+.search-box svg {
+  color: #34c38f;
+}
+
+/* Filter items */
+.filter-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="date"],
+select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Table */
+.patient-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.patient-table th,
+.patient-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.patient-table th {
+  background-color: #34c38f;
+  color: white;
+  font-weight: 600;
+}
+
+.patient-table tr:nth-child(even) td {
+  background-color: #f9fafb;
+}
+
+.view-button {
+  padding: 8px 16px;
+  background-color: #34c38f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.view-button:hover {
+  background-color: #2aaf78;
+  transform: translateY(-2px);
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: 1px solid #34c38f;
+  background-color: white;
+  color: #34c38f;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination .active,
+.pagination button:hover {
+  background-color: #34c38f;
+  color: white;
+}
+
+/* ✅ Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ แถวละ 4 กล่อง */
+  gap: 20px;
+  justify-content: center; /* ✅ จัดให้อยู่ตรงกลาง */
+  margin: 24px 0 30px;
+  padding: 0 10px;
+}
+
+/* Individual Card */
+.card {
+  background-color: #ffffff;
+  padding: 16px 12px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card span {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.card strong {
+  font-size: 22px;
+  margin-top: 0;
+}
+
+/* Pastel Color Themes */
+.card.total {
+  background: linear-gradient(to right, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.card.normal {
+  background: linear-gradient(to right, #dbf4ff, #bfdbfe);
+  color: #1e3a8a;
+}
+
+.card.fat {
+  background: linear-gradient(to right, #fee2e2, #fecaca);
+  color: #991b1b;
+}
+
+.card.over {
+  background: linear-gradient(to right, #ffedd5, #fed7aa);
+  color: #7c2d12;
+}
+
+.card.sam {
+  background: linear-gradient(to right, #fde2e4, #fbcfe8);
+  color: #7f1d1d;
+}
+
+.card.stunt {
+  background: linear-gradient(to right, #ede9fe, #ddd6fe);
+  color: #4c1d95;
+}
+
+.card.under {
+  background: linear-gradient(to right, #fef9c3, #fde68a);
+  color: #713f12;
+}
+
+.view-results-loading {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #0d9488;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.view-results-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+
+/* 📱 Responsive for Mobile */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .summary-cards .card {
+    flex: 1 1 45%;
+    min-width: 140px;
+    font-size: 14px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filter-container .search-box,
+  .filter-container .filter-item {
+    width: 100%;
+  }
+
+  .patient-table {
+    overflow-x: auto;
+  }
+
+  .patient-table table {
+    width: 100%;
+    min-width: 600px;
+    font-size: 13.5px;
+  }
+
+  .patient-table th,
+  .patient-table td {
+    padding: 8px 6px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pagination button {
+    flex: 1 1 30px;
+    min-width: 30px;
+  }
+}
+.patient-table {
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.patient-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+}
+
+
+.summary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.summary-cards .card {
+  flex: 1 1 calc(25% - 16px); /* 4 cards ต่อแถวใน desktop */
+  min-width: 150px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.summary-cards .card:hover {
+  transform: translateY(-4px);
+}
+
+.summary-cards .card span {
+  display: block;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.summary-cards .card strong {
+  font-size: 22px;
+  color: #222;
+}
+
+
+@media (max-width: 768px) {
+  .summary-cards {
+    justify-content: center;
+  }
+
+  .summary-cards .card {
+    flex: 1 1 45%;   /* 2 cards ต่อแถว */
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-cards .card {
+    flex: 1 1 100%;  /* 1 card ต่อแถว */
+    max-width: 100%;
+  }
+}
+
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-item label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+}
+
+.filter-item select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.filter-item label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0;
+}
+
+.filter-item select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .filter-item {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .filter-item select {
+    flex: 1;
+    max-width: 300px;
+  }
+}
+
+
+.view-results-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  font-family: 'Prompt', sans-serif;
+}
+
+.view-results-container h2 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+  .view-results-container h2 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+
+.patient-table td:first-child,
+.patient-table th:first-child {
+  min-width: 140px; /* หรือ 160px ก็ได้ ลองปรับตามชื่อจริง */
+  width: 140px;
+  max-width: 200px;
+  word-break: break-word; /* ป้องกันชื่อยาวหลุด */
+}

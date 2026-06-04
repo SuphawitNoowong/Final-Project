@@ -1,0 +1,435 @@
+/* ✅ พื้นหลังและฟอนต์ */
+body, .dashboard-container {
+  font-family: 'Sarabun', sans-serif;
+  background: linear-gradient(to bottom right, #e0fdfa, #f0fdfa);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✅ Layout หลัก */
+.page-content {
+  padding: 48px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 360px 360px 360px; /* ✅ ทุกการ์ดกว้างเท่ากัน */
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  align-items: start;
+}
+
+/* ✅ การ์ดผลการประเมิน */
+.prediction-container {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e0f2fe;
+  width: 100%;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.prediction-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #047857;
+  margin-bottom: 24px;
+}
+
+.status-box {
+  background: #f0fdfa;
+  border-radius: 24px;
+  padding: 32px 20px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.status-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.status-message {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.result-box {
+  background-color: #f9fafb;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 16px;
+  color: #374151;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 6px;
+}
+
+.label {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.value {
+  color: #111827;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ✅ ปุ่มทำนาย */
+.predict-btn {
+  display: block;
+  width: 100%;
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+.predict-btn:hover {
+  background-color: #059669;
+}
+
+.predict-btn:disabled {
+  background-color: #a7f3d0;
+  cursor: not-allowed;
+}
+
+/* ✅ การ์ดซ้าย-ขวา */
+.side-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.side-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e0f2fe;
+  width: 100%;
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* ✅ ชิดซ้ายเพื่อความเท่ากัน */
+  text-align: left;          /* ✅ ข้อความชิดซ้าย */
+  justify-content: flex-start; /* ✅ หัวข้อขึ้นบน */
+}
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* ✅ การ์ดระบบแบบใหม่ (ตามภาพที่ 1) */
+.system-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0f2fe;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-header-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.system-icon {
+  font-size: 22px;
+  color: #047857;
+}
+
+/* ✅ แถวข้อมูลใน card system */
+.info-row {
+  background-color: #f0fdfa;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* ✅ รายละเอียด */
+.info-label {
+  color: #374151;
+}
+
+.info-value {
+  font-weight: bold;
+}
+
+.usage-box {
+  text-align: center;
+}
+
+.usage-count {
+  font-size: 32px;
+  font-weight: bold;
+  color: #9333ea;
+}
+
+.usage-label {
+  font-size: 14px;
+  color: #444;
+}
+
+.contact-box {
+  font-size: 14px;
+  text-align: left;
+}
+
+/* ✅ รายการคำแนะนำ */
+.bullet-list {
+  list-style: disc;
+  padding-left: 20px;
+  color: #374151;
+  text-align: left;
+}
+.bullet-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* ✅ จุดสถานะ */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+.dot.green {
+  background-color: #059669;
+}
+
+/* ✅ สี */
+.text-blue {
+  color: #2563eb;
+}
+.text-green {
+  color: #047857;
+}
+.text-purple {
+  color: #9333ea;
+}
+.text-pink {
+  color: #db2777;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #0ea5e9;
+}
+/* ✅ การ์ดสถิติการใช้งาน */
+.usage-card {
+  background: linear-gradient(to right, #f3e8ff, #f5f3ff);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(128, 90, 213, 0.1);
+  margin-top: 12px;
+}
+
+.usage-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #7c3aed;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.usage-icon {
+  font-size: 20px;
+}
+
+.usage-count {
+  font-size: 32px;
+  font-weight: bold;
+  color: #9333ea;
+  margin-bottom: 4px;
+}
+
+.usage-label {
+  font-size: 14px;
+  color: #444;
+}
+/* ✅ การ์ดติดต่อสอบถาม */
+.contact-card {
+  width: 100%;
+}
+
+.contact-box {
+  background-color: #fff5f5; /* ชมพูอ่อนกว่าเดิม */
+  padding: 16px 20px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ✅ ไอคอนเฉพาะแบบสีตรงภาพ */
+.icon-red {
+  color: #e11d48;
+  font-size: 18px;
+  min-width: 20px;
+    margin-right: 4px; /* ✅ เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+    
+}
+.text-pink {
+  color: #db2777;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* ✅ ระยะห่างระหว่างไอคอนกับข้อความ */
+  margin-bottom: 16px;
+}
+
+
+.icon-pink {
+  color: #db2777;
+  font-size: 18px;
+  min-width: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-box strong {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+.contact-box p {
+  font-size: 14px;
+  margin: 0;
+  color: #374151;
+}
+.recommend-card {
+  width: 100%;
+  background-color: #f9fbff;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03);
+  text-align: left;
+}
+
+.recommend-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2563eb; /* น้ำเงิน */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.recommend-title svg {
+  color: #2563eb;
+  font-size: 20px;
+}
+
+.recommend-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.recommend-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.recommend-list li::before {
+  content: "●";
+  color: #3b82f6; /* สีจุด */
+  font-size: 10px;
+}
+.icon-left {
+  font-size: 18px;
+  color: #047857;
+  margin-right: 8px; /* ✅ เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+  display: inline-block;
+  vertical-align: middle; /* ✅ ให้ไอคอนอยู่แนวเดียวกับข้อความ */
+}
+
+.green-text-bold {
+  color: #059669;
+  font-weight: bold;
+}
+@keyframes blinkDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; } /* ลดจาก 0.6 → 0.85 เพื่อให้แทบไม่จาง */
+}
+
+.dot.green {
+  background-color: #065f46; /* เขียวเข้มขึ้นกว่าเดิม (Tailwind: emerald-800) */
+  animation: blinkDot 1.2s infinite ease-in-out;
+}
+

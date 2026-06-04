@@ -1,0 +1,280 @@
+/* RESET */
+* {
+  font-family: 'Sarabun', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout */
+.dashboard-container {
+  background-color: #f0fff7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.dashboard-header {
+  background: linear-gradient(to right, #28c76f, #20c997);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-logo {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-button,
+.logout-button {
+  background-color: white;
+  color: #34c38f;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover,
+.logout-button:hover {
+  background-color: #dff0e2;
+  color: #2b8f69;
+}
+
+.dashboard-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  padding: 40px 5vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Profile Header Block */
+.user-info-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  justify-content: flex-start;
+}
+
+.profile-circle {
+  background-color: #34c38f;
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 18px;
+  color: #555;
+}
+
+.role {
+  font-size: 32px;
+  color: #222;
+  font-weight: bold;
+}
+
+.username {
+  color: #34c38f;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.underline {
+  width: 100px;
+  height: 3px;
+  background-color: #34c38f;
+  margin-top: 4px;
+}
+
+/* Section แสดงผล */
+.results-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+/* Footer */
+.dashboard-footer {
+  background: linear-gradient(to right, #28c76f, #20c997);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  margin-top: auto;
+}
+
+
+.status-dot {
+  position: absolute;
+  right: -9px;
+  bottom: -9px;
+  width: 35px;
+  height: 35px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+.status-inner {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+.greeting1 {
+  font-size: 18px;
+  color: #047857;
+  margin-bottom: 4px;
+}
+
+.role1 {
+  font-size: 28px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+.username1 {
+  font-size: 20px;
+  color: #047857;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.underline1 {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #34d399, #14b8a6);
+  margin-top: 8px;
+  border-radius: 6px;
+}
+
+.profile-circle:hover {
+  box-shadow: 0 0 30px rgba(52, 195, 143, 0.8), 0 0 60px rgba(52, 195, 143, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .dashboard-main {
+    padding: 32px 2vw;
+  }
+  .user-info-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .profile-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 22px;
+  }
+  .role, .role1 {
+    font-size: 22px;
+  }
+  .greeting, .greeting1, .username, .username1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 8px;
+    gap: 10px;
+  }
+  .dashboard-main {
+    padding: 18px 2vw;
+    min-width: 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .user-info-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .profile-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .role, .role1 {
+    font-size: 16px;
+  }
+  .greeting, .greeting1, .username, .username1 {
+    font-size: 13px;
+  }
+  .underline, .underline1 {
+    width: 50px;
+    height: 2px;
+    margin-top: 2px;
+  }
+  .results-section {
+    padding: 10px 2vw;
+    font-size: 0.98rem;
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+  .dashboard-footer {
+    padding: 12px 4px;
+    font-size: 0.95rem;
+  }
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .nav-button, .logout-button {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+}
+

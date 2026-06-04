@@ -1,0 +1,803 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sarabun', sans-serif;
+}
+
+/* MAIN CONTAINER */
+.manage-wrapper {
+  background-color: #f0fff7;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+/* SEARCH SECTION */
+.search-header {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-title {
+  color: #059669;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.search-header h2 {
+  color: #059669;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border: 2px solid #d1fae5;
+  border-radius: 30px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 8px;
+  font-size: 14px;
+  background: transparent;
+  width: 100%;
+}
+
+
+.search-box input:focus {
+  border-color: #059669;
+  outline: none;
+}
+
+.search-icon {
+  color: #10b981;
+  width: 18px;
+  height: 18px;
+}
+
+/* BUTTONS */
+.right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.add-btn {
+  background: #059669;
+  color: white;
+  font-weight: bold;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #047857;
+}
+
+.filter-btn {
+  background: white;
+  color: #059669;
+  font-weight: bold;
+  padding: 12px 22px;
+  border: 2px solid #059669;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #ecfdf5;
+  border-color: #047857;
+}
+
+/* TABLE TITLE */
+.table-title {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between; /* ทำให้หัวข้ออยู่ซ้าย ปุ่มอยู่ขวา */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.table-title h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #065f46;
+  margin: 0;
+}
+
+.table-title span {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* TABLE STYLES */
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.modern-table thead tr {
+  background: linear-gradient(to right, #059669, #10b981);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modern-table th {
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  padding: 16px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.modern-table td {
+  vertical-align: top;
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 15px;
+}
+
+.modern-table tr:hover {
+  background-color: #f0fdf4;
+}
+
+/* GENDER BADGE */
+.gender-badge {
+  background: #e0f2ff;
+  color: #2563eb;
+  padding: 6px 14px;
+  font-weight: bold;
+  border-radius: 9999px;
+  display: inline-block;
+  font-size: 14px;
+  border: 1px solid #bfdbfe;
+}
+
+/* ACTION ICONS */
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  padding: 0;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  font-size: 16px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon.view {
+  background: #e0f2ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.icon.edit {
+  background: #e6fce8;
+  color: #22c55e;
+  border-color: #bbf7d0;
+}
+
+.icon.delete {
+  background: #ffe5e9;
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+/* PAGINATION */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.pagination-container button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #059669;
+  background: white;
+  color: #059669;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination-container button:hover {
+  background: #059669;
+  color: white;
+}
+
+.pagination-container .active {
+  background: #059669;
+  color: white;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ปรับขนาดและจัดวางฟอร์มใน modal */
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* สไตล์ช่องกรอก input / select */
+/* ให้ <select> ดูเหมือน input field ปกติ */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  transition: 0.2s border;
+  background-color: white;
+  appearance: none;           /* ซ่อน UI ของเบราว์เซอร์เดิม */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+}
+
+
+.form-input:focus {
+  border-color: #059669;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+
+/* ส่วนหัวของ modal */
+.modal-content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ปุ่ม modal */
+.modal-content button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-content button:hover {
+  filter: brightness(0.95);
+}
+
+.modal-content .confirm-btn {
+  background-color: #059669;
+  color: white;
+}
+
+.modal-content .cancel-btn {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+/* กลุ่มปุ่ม */
+.modal-content .button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.prefix-select {
+  flex: 0 0 180px;
+}
+
+.name-input {
+  flex: 1;
+}
+
+.modern-table th,
+.modern-table td {
+  vertical-align: middle;
+}
+
+.modern-table th:last-child,
+.modern-table td:last-child {
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ช่องแสดงอายุแบบ readonly */
+.age-display {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1.5px solid #d1d5db;
+  flex: 0 0 150px;
+  text-align: center;
+}
+
+.text-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  transition: 0.2s border;
+  background-color: white;
+  
+  appearance: textfield;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.center-text {
+  text-align: center;
+  vertical-align: middle;
+  height: 100%; /* ช่วยให้ชิดตรงกลางจริงๆ */
+}
+
+.wrap-children {
+  white-space: normal;  /* ยอมให้ขึ้นบรรทัด */
+  word-break: break-word;  /* ถ้ามีคำยาวเกิน */
+  max-width: 300px; /* จำกัดความกว้าง (ปรับได้) */
+}
+
+.input-row,
+.address-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;            /* ✅ ปรับให้ช่องว่างเท่ากันแนวนอน */
+  margin-bottom: 16px;  /* ✅ เพิ่มระยะห่างแนวตั้ง */
+}
+
+
+.address-row .text-input {
+  flex: 1 1 20%;
+  min-width: 120px;
+}
+
+
+.search-wrapper-centered {
+  background-color: #ecfdf5;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.centered-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #059669;
+  margin-bottom: 16px;
+}
+
+.search-box-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-box-wrapper input {
+  width: 100%;
+  height: 48px;
+  padding: 12px 20px 12px 44px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 9999px;
+  font-size: 16px;
+  background: white;
+  transition: border 0.2s ease;
+}
+
+.search-box-wrapper input:focus {
+  border-color: #059669;
+  outline: none;
+}
+
+.search-icon-green {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #059669;
+  font-size: 20px;
+}
+
+
+.button-right-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.approval-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.approval-card-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1rem;            /* ⬅️ ลดจาก 1rem */
+  border-radius: 8px;              /* ⬅️ ขอบมนเล็กลง */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); /* เบาลง */
+  font-size: 15px;                 /* ⬅️ ตัวอักษรเล็กลง */
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;              /* ช่องว่างแต่ละบล็อก */
+}
+
+
+.approval-card-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.approval-card-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.approval-card-info p {
+  white-space: normal;     /* ✅ ยอมให้ตัดบรรทัด (แทน nowrap) */
+  overflow: visible;       /* ✅ แสดงข้อความครบ */
+  text-overflow: initial;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.register-detail-box {
+  background-color: #eafdfc; /* สีฟ้าอ่อน */
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.info-header-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.address-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 12px;
+  column-gap: 32px;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+.address-detail-grid div {
+  display: flex;
+  gap: 6px;
+}
+
+.address-detail-grid span {
+  font-weight: bold;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Modal Styling */
+.styled-modal {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.full-width-input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Spacing and layout */
+.spacing-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.spacing-item {
+  flex: 1;
+  min-width: 120px;
+}
+
+.parent-row {
+  align-items: center;
+}
+
+
+/* ✅ ใช้จัดขนาดทุก input/select ให้เท่ากันภายในแต่ละแถว */
+.spacing-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.spacing-row .form-input,
+.spacing-row .text-input,
+.spacing-row input,
+.spacing-row select {
+  flex: 1;
+  min-width: 150px;
+  box-sizing: border-box;
+}
+
+/* ถ้าต้องการให้ชื่อเด็ก/นามสกุลกว้างกว่าหน่อย */
+.name-input {
+  flex: 2;
+}
+
+/* ✅ ปุ่มลบ */
+.remove-btn {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  color: red;
+  cursor: pointer;
+}
+
+
+
+
+/* ทำให้ input date มีสไตล์เหมือน input ปกติ */
+.spacing-row input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  height: 38px;
+}
+
+/* ให้ช่องอายุ (readonly) มีขนาดและสไตล์ใกล้เคียง */
+.age-display {
+  background-color: white;
+  height: 38px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.input-row .text-input,
+.input-row .form-input,
+.input-row input,
+.input-row select {
+  flex: 1;
+  min-width: 140px;
+}
+
+.input-row .short {
+  flex: 0 0 100px;
+}
+
+.input-row .name-input {
+  flex: 1;
+}
+
+.modal-content input,
+.modal-content select {
+  height: 44px;
+}
+
+.spacing-item {
+  flex: 1;
+  min-width: 120px;
+}
+
+.short {
+  width: 90px;
+}
+
+.name-input {
+  flex: 1;
+}
+
+
+.form-row-equal {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-row-equal .text-input {
+  flex: 1; /* ขยายให้เท่ากัน */
+  min-width: 0; /* ป้องกัน overflow */
+}
+
+
+
+/* ✅ รองรับ Responsive เฉพาะตารางด้านล่าง */
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* รองรับ iOS */
+  margin-bottom: 20px; /* เผื่อเว้นจาก pagination */
+}
+
+/* ป้องกันตารางแคบเกินไปบนมือถือ */
+.table-scroll-wrapper .modern-table {
+  min-width: 700px; /* หรือ 600px ตามความเหมาะสมกับจำนวนคอลัมน์ */
+}
+
+.title-and-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* รองรับหน้าจอแคบ */
+  gap: 16px;
+}
+
+.table-title h3 {
+  font-size: 20px;
+  color: #064e3b;
+}
+
+.table-title span {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.button-right-group {
+  display: flex;
+  gap: 16px;
+}
+
+.error-box {
+  background-color: #fff0f0;
+  border: 1px solid #ef4444;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: #b91c1c;
+  font-size: 14px;
+}
+.error-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
