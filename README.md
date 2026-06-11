@@ -48,21 +48,36 @@
 * [cite_start]**Model:** Extra Trees Classifier [cite: 51]
 * [cite_start]**Explainable AI:** SHAP [cite: 185, 298]
 
-## 🏗️ System Architecture
+## System Architecture
 1.  **Frontend (React):** Handles user interactions, data input, and displays health dashboards/charts.
 2.  [cite_start]**Backend (Node.js/Express):** Manages authentication, database queries (MySQL), and business logic[cite: 1218].
 3.  **ML API (FastAPI):** Exposes the trained Extra Trees model and SHAP explainer as an endpoint. [cite_start]The Node.js backend communicates with this FastAPI service to retrieve real-time predictions and explanations[cite: 157].
 
-## ⚙️ Local Setup & Installation
+## Local Setup & Installation
 
 *(Note to developer: Add your specific `.env` variables or port configurations here)*
 
-### 1. Database Setup
+### 1.Database Setup
 * Install MySQL.
 * Import the database schema using the provided `.sql` file in the `/database` folder.
 
-### 2. Machine Learning API (FastAPI)
+### 2.Machine Learning API (FastAPI)
 ```bash
 cd ml-api
 pip install -r requirements.txt
 uvicorn main:app --reload
+
+### 3.Backend (Node.js)
+```bash
+cd backend
+npm install
+npm start
+
+### 4.Frontend (React)
+```bash
+cd frontend
+npm install
+npm start
+
+## Developers
+* Natchapon Tonganant
