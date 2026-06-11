@@ -28,3 +28,41 @@
 ### 3. Administrator (ผู้ดูแลระบบ)
 * [cite_start]**User Management:** Add, edit, and delete user profiles (Parents, Doctors) via HN[cite: 147, 501].
 * [cite_start]**Relationship Management:** Map family relationships between parents and toddlers[cite: 149, 502].
+
+##  Tech Stack
+
+### Frontend
+* [cite_start]**Framework:** React.js (Single Page Application) [cite: 1210]
+* [cite_start]**Routing & HTTP:** React Router DOM, Axios [cite: 1213]
+* [cite_start]**Data Visualization:** Chart.js, Plotly.js, Recharts (for health trends & SHAP values) [cite: 1213]
+* [cite_start]**UI Components:** React-icons, React-modal [cite: 1213]
+
+### Backend
+* [cite_start]**Runtime & Framework:** Node.js, Express.js (RESTful API) [cite: 1218, 1221]
+* [cite_start]**Middleware:** CORS, Body-parser [cite: 1218, 1221]
+* [cite_start]**Database:** MySQL (using `mysql2` package for connection) [cite: 1218, 1221]
+
+### Machine Learning & AI
+* [cite_start]**Language & API:** Python, FastAPI [cite: 157, 185]
+* [cite_start]**Libraries:** Scikit-learn, Pandas, NumPy, SMOTE [cite: 184, 1063]
+* [cite_start]**Model:** Extra Trees Classifier [cite: 51]
+* [cite_start]**Explainable AI:** SHAP [cite: 185, 298]
+
+## 🏗️ System Architecture
+1.  **Frontend (React):** Handles user interactions, data input, and displays health dashboards/charts.
+2.  [cite_start]**Backend (Node.js/Express):** Manages authentication, database queries (MySQL), and business logic[cite: 1218].
+3.  **ML API (FastAPI):** Exposes the trained Extra Trees model and SHAP explainer as an endpoint. [cite_start]The Node.js backend communicates with this FastAPI service to retrieve real-time predictions and explanations[cite: 157].
+
+## ⚙️ Local Setup & Installation
+
+*(Note to developer: Add your specific `.env` variables or port configurations here)*
+
+### 1. Database Setup
+* Install MySQL.
+* Import the database schema using the provided `.sql` file in the `/database` folder.
+
+### 2. Machine Learning API (FastAPI)
+```bash
+cd ml-api
+pip install -r requirements.txt
+uvicorn main:app --reload
